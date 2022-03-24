@@ -7,7 +7,8 @@ export default function WashCam(data) {
         axios
             .get(info.backendUrl + "/cam/" + data.locationID)
             .then((result) => {
-                //console.log(result.data.response);
+                let dataCam = result.data.response;
+                dataCam.lpn = getRandomLPN(dataCam.lpn);
                 data.setCam(result.data.response);
                 data.setCamLoad(false);
             });
@@ -29,12 +30,14 @@ export default function WashCam(data) {
                             <span class="visually-hidden">Loading...</span>
                         </div>
                     )}
-                    {data.cam.lpn &&
-                        !data.camLoad &&
-                        getRandomLPN(data.cam.lpn)}
+                    {data.cam.lpn && !data.camLoad && data.cam.lpn}
                 </div>
             )}
-            {data.cam && <p>{data.cam.description}</p>}
+            {data.cam && (
+                <p className={data.camLoad ? "text-muted" : ""}>
+                    {data.cam.description}
+                </p>
+            )}
         </div>
     );
 }

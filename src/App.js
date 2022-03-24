@@ -3,6 +3,7 @@ import "./style.scss";
 import Navbar from "./components/NavBar";
 import WashLocation from "./components/WashLocation";
 import WashCam from "./components/WashCam";
+import WashProducts from "./components/WashProducts";
 import info from "./info";
 import axios from "axios";
 
@@ -26,7 +27,8 @@ function App() {
     //Cam
     const [cam, setCam] = useState({});
     const [camLoad, setCamLoad] = useState(false);
-    console.log(cam);
+
+    //Product
 
     return (
         <>
@@ -48,7 +50,9 @@ function App() {
                         camLoad={camLoad}
                     />
                 )}
-                {cam.lpn && <p>Cam chosen!</p>}
+                {cam.lpn && (
+                    <WashProducts lpn={cam.lpn} locationID={locationID} />
+                )}
             </main>
         </>
     );
