@@ -29,6 +29,13 @@ function App() {
     const [camLoad, setCamLoad] = useState(false);
 
     //Product
+    const [products, setProducts] = useState([]);
+    const [productID, setProductID] = useState(0);
+
+    function onProductChange(event) {
+        //console.log(event.target.value);
+        setProductID(event.target.value);
+    }
 
     return (
         <>
@@ -51,7 +58,13 @@ function App() {
                     />
                 )}
                 {cam.lpn && (
-                    <WashProducts lpn={cam.lpn} locationID={locationID} />
+                    <WashProducts
+                        lpn={cam.lpn}
+                        locationID={locationID}
+                        products={products}
+                        setProducts={setProducts}
+                        onProductChange={onProductChange}
+                    />
                 )}
             </main>
         </>

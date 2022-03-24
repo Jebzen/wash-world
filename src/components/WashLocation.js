@@ -13,7 +13,7 @@ export default function WashLocation(data) {
 
     return (
         <div>
-            <h2 className="mt-5">Choose carwash</h2>
+            <h2 className="mt-5">Vælg bilvask</h2>
             <div className="d-grid wash-location-list">
                 {data.locations.sort(sortArray).map((location) => {
                     return (

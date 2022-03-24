@@ -26,8 +26,8 @@ export default function WashCam(data) {
             {data.cam && (
                 <div className="wash-label">
                     {data.camLoad && (
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     )}
                     {data.cam.lpn && !data.camLoad && data.cam.lpn}
