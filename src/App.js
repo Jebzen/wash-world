@@ -1,18 +1,17 @@
-import React from 'react';
+import React from "react";
+import "./style.scss";
+import Navbar from "./components/NavBar";
+import info from "./info";
 
 function App() {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Navbar />
+            <main>
+                <h1>Wash world takeover!</h1>
+            </main>
+        </>
+    );
 }
 
 export default App;

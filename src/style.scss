@@ -1,0 +1,49 @@
+$Green: #00c167;
+$Grey: #f6f6f6;
+$White: #ffffff;
+$Black: #000000;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400);
+@import url(https://fonts.googleapis.com/css?family=Google+Sans+Text:400&text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93);
+
+* {
+    font-family: "Google Sans", Roboto, Gilroy, "system-ui", Trebuchet MS, Arial,
+        Helvetica, Verdana;
+}
+
+.logo {
+    width: 6rem;
+}
+.wash-location-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+@media only screen and(max-width: 600px) {
+    .wash-location-list {
+        grid-template-columns: 1fr;
+    }
+}
+.wash-location-card {
+    padding: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.btn-check:checked + .wash-location-card {
+    background-color: darken($Green, 10%);
+}
+.available {
+    background-color: $Green;
+    border-bottom: 2px solid darken($Green, 10%);
+    color: $White;
+}
+.maintenance {
+    background-color: gray;
+    border-bottom: 2px solid darken(gray, 10%);
+    color: $Black;
+}
+
+@import "bootstrap-icons";
+@import "bootstrap";
