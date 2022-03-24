@@ -15,7 +15,7 @@ export default function WashProducts(data) {
     return (
         <>
             <h2>Vælg pakke</h2>
-            <div className="wash-product-list">
+            <div className="wash-product-list mb-5">
                 {data.products.map((product) => {
                     return (
                         <div className="wash-product shadow">
