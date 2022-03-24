@@ -12,7 +12,7 @@ export default function WashLocation(data) {
     }
 
     return (
-        <div className="d-grid wash-location-list my-5">
+        <div className="d-grid wash-location-list mt-5">
             {data.locations.sort(sortArray).map((location) => {
                 return (
                     <div>

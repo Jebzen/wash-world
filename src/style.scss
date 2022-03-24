@@ -44,6 +44,20 @@ $Black: #000000;
     border-bottom: 2px solid darken(gray, 10%);
     color: $Black;
 }
+.wash-cam {
+    margin-top: 3rem;
+}
+.wash-label {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    color: $White;
+    padding: 1rem;
+    background-color: $Green;
+    width: fit-content;
+    border-bottom: 2px solid darken($Green, 10%);
+    margin-bottom: 1rem;
+}
 
 @import "bootstrap-icons";
 @import "bootstrap";
