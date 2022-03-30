@@ -22,6 +22,8 @@ export default function WashProducts(data) {
                     let Pricetag = product.price + " DKK";
                     if (index == 1 || index == 3) {
                         Pricetag = "Ikke tilgængelig";
+                    } else if (data.lpn === "BV99123") {
+                        Pricetag = "Gratis med premium";
                     }
                     return (
                         <div
