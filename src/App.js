@@ -24,30 +24,59 @@ function App() {
         setCamLoad(true);
     }
 
+    function sortArray(a, b) {
+        if (a.status !== "available") {
+            return 1;
+        }
+        if (b.status !== "available") {
+            return 1;
+        }
+        return 0;
+    }
+
     //Cam
     const [cam, setCam] = useState({});
     const [camLoad, setCamLoad] = useState(false);
 
     //Product
     const [products, setProducts] = useState([]);
-    const [productID, setProductID] = useState(0);
+    const [productID, setProgram] = useState(0);
+
+    //Get products
+    //data.lpn
+    //BV99122
+    useEffect(() => {
+        axios.get(info.backendUrl + "/products/BV99122").then((result) => {
+            console.log(result.data.response.products);
+            setProducts(result.data.response.products);
+        });
+    }, [locationID]);
 
     function onProductChange(event) {
-        //console.log(event.target.value);
-        setProductID(event.target.value);
+        console.log(event.target.value);
+        setProgram(event.target.value);
     }
 
     return (
         <>
             <Navbar />
             <main className="container">
-                {locations.length > 0 && (
-                    <WashLocation
-                        locations={locations}
-                        setLocations={setLocations}
-                        onChoice={onChoice}
-                    />
-                )}
+                <div>
+                    <h2 className="mt-5">Vælg bilvask</h2>
+                    <div className="d-grid wash-location-list">
+                        {locations.sort(sortArray).map((location) => {
+                            return (
+                                <WashLocation
+                                    key={location.id}
+                                    location={location}
+                                    onChoice={onChoice}
+                                />
+                            );
+                        })}
+                    </div>
+                </div>
+
+                
                 {locationID !== 0 && (
                     <WashCam
                         locationID={locationID}
@@ -57,15 +86,26 @@ function App() {
                         camLoad={camLoad}
                     />
                 )}
+
+
                 {cam.lpn && (
-                    <WashProducts
-                        lpn={cam.lpn}
-                        locationID={locationID}
-                        products={products}
-                        setProducts={setProducts}
-                        onProductChange={onProductChange}
-                    />
+                    <>
+                        <h2>Vælg pakke</h2>
+                    </>
                 )}
+                <div className="wash-product-list mb-5">
+                    {cam.lpn &&
+                        products.map((product) => {
+                            return (
+                                <>
+                                    <WashProducts
+                                        product={product}
+                                        onProductChange={onProductChange}
+                                    />
+                                </>
+                            );
+                        })}
+                </div>
             </main>
         </>
     );

@@ -12,7 +12,7 @@ export default function WashCam(data) {
                 data.setCam(result.data.response);
                 data.setCamLoad(false);
             });
-    }, data.locationID);
+    }, [data.locationID]);
 
     //Washworld function
     function getRandomLPN(lpn) {
