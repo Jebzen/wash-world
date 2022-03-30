@@ -19,6 +19,10 @@ export default function WashProducts(data) {
             <h2>Vælg pakke</h2>
             <div className="wash-product-list mb-5" id="product-list">
                 {data.products.map((product, index) => {
+                    let Pricetag = product.price + " DKK";
+                    if (index == 1 || index == 3) {
+                        Pricetag = "Ikke tilgængelig";
+                    }
                     return (
                         <div
                             key={product.productid}
@@ -48,9 +52,7 @@ export default function WashProducts(data) {
                                     }
                                     htmlFor={"btn-" + product.productid}
                                 >
-                                    {product.price === "0.00"
-                                        ? "Start"
-                                        : product.price + " DKK"}
+                                    {Pricetag}
                                 </label>
                             </div>
                         </div>
