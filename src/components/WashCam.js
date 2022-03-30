@@ -12,7 +12,7 @@ export default function WashCam(data) {
                 data.setCam(result.data.response);
                 data.setCamLoad(false);
             });
-    }, data.locationID);
+    }, [data.locationID]);
 
     //Washworld function
     function getRandomLPN(lpn) {
@@ -20,6 +20,8 @@ export default function WashCam(data) {
         const numbers = lpn.slice(2) - Math.round(Math.random() * 1);
         return chars + numbers;
     }
+
+    const lpnText = "Nummerplade: " + data.cam.lpn;
 
     return (
         <div className="wash-cam">
@@ -30,7 +32,7 @@ export default function WashCam(data) {
                             <span className="visually-hidden">Loading...</span>
                         </div>
                     )}
-                    {data.cam.lpn && !data.camLoad && data.cam.lpn}
+                    {data.cam.lpn && !data.camLoad && lpnText}
                 </div>
             )}
             {data.cam && (

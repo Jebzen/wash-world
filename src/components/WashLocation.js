@@ -17,7 +17,7 @@ export default function WashLocation(data) {
             <div className="d-grid wash-location-list">
                 {data.locations.sort(sortArray).map((location) => {
                     return (
-                        <div>
+                        <div key={location.id}>
                             <input
                                 type="radio"
                                 className="btn-check"

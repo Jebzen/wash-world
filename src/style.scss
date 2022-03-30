@@ -33,24 +33,24 @@ $Black: #000000;
 }
 .btn-check:checked + .wash-location-card {
     background-color: darken($Green, 15%);
-    border-bottom: 2px solid darken($Green, 25%);
+    border-bottom: 3px solid darken($Green, 25%);
 }
 .available {
     background-color: $Green;
-    border-bottom: 2px solid darken($Green, 10%);
+    border-bottom: 3px solid darken($Green, 10%);
     color: $White;
     &:hover {
         background-color: darken($Green, 10%);
-        border-bottom: 2px solid darken($Green, 20%);
+        border-bottom: 3px solid darken($Green, 20%);
     }
 }
 .maintenance {
     background-color: gray;
-    border-bottom: 2px solid darken(gray, 10%);
+    border-bottom: 3px solid darken(gray, 10%);
     color: $Black;
     &:hover {
         background-color: darken(gray, 10%);
-        border-bottom: 2px solid darken(gray, 20%);
+        border-bottom: 3px solid darken(gray, 20%);
     }
 }
 .wash-cam {
@@ -64,7 +64,7 @@ $Black: #000000;
     padding: 1rem;
     background-color: $Green;
     width: fit-content;
-    border-bottom: 2px solid darken($Green, 10%);
+    border-bottom: 3px solid darken($Green, 10%);
     margin-bottom: 1rem;
 }
 .wash-product-list {
@@ -75,7 +75,7 @@ $Black: #000000;
 }
 .wash-product {
     padding: 1rem;
-    border-bottom: 2px solid darken($Green, 10%);
+    border-bottom: 3px solid darken($Green, 10%);
     display: flex;
     flex-direction: column;
 }
@@ -90,16 +90,26 @@ $Black: #000000;
     padding: 1rem;
     background-color: $Green;
     width: fit-content;
-    border-bottom: 2px solid darken($Green, 10%);
+    border: none;
+    border-bottom: 3px solid darken($Green, 10%);
     cursor: pointer;
     &:hover {
         background-color: darken($Green, 10%);
-        border-bottom: 2px solid darken($Green, 20%);
+        border-bottom: 3px solid darken($Green, 20%);
+    }
+    &.disabled {
+        background-color: gray;
+        border-bottom: 3px solid darken(gray, 10%);
+        color: $Black;
+        &:hover {
+            background-color: darken(gray, 10%);
+            border-bottom: 3px solid darken(gray, 20%);
+        }
     }
 }
 .btn-check:checked + .wash-btn {
     background-color: darken($Green, 15%);
-    border-bottom: 2px solid darken($Green, 25%);
+    border-bottom: 3px solid darken($Green, 25%);
 }
 
 @import "bootstrap-icons";
