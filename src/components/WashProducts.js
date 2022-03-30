@@ -7,11 +7,11 @@ export default function WashProducts(data) {
     //BV99122
     //Hardcoded BV99122 fordi BV99123 gav forkerte oplysninger?
     useEffect(() => {
-        axios.get(info.backendUrl + "/products/BV99122").then((result) => {
+        axios.get(info.backendUrl + "/products/" + data.lpn).then((result) => {
             //console.log(result.data.response.products);
             data.setProducts(result.data.response.products);
         });
-    }, [data.locationID]);
+    }, [data.locationID, data.lpn]);
 
     //Guld of premium plus hardcoded ud fordi de gave fejl i post
     return (
@@ -48,7 +48,9 @@ export default function WashProducts(data) {
                                     }
                                     htmlFor={"btn-" + product.productid}
                                 >
-                                    {product.price} DKK
+                                    {product.price === "0.00"
+                                        ? "Start"
+                                        : product.price + " DKK"}
                                 </label>
                             </div>
                         </div>

@@ -21,7 +21,12 @@ export default function WashCam(data) {
         return chars + numbers;
     }
 
-    const lpnText = "Nummerplade: " + data.cam.lpn;
+    let lpnText;
+    if (data.cam.lpn == "BV99122") {
+        lpnText = "Nummerplade: " + data.cam.lpn;
+    } else {
+        lpnText = "Nummerplade: " + data.cam.lpn + " PREMIUM";
+    }
 
     return (
         <div className="wash-cam">

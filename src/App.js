@@ -92,7 +92,7 @@ function App() {
                         camLoad={camLoad}
                     />
                 )}
-                {cam.lpn && (
+                {location.id && cam.lpn && (
                     <WashProducts
                         lpn={cam.lpn}
                         locationID={location.id}
