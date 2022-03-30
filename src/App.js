@@ -68,6 +68,10 @@ function App() {
         //myTimer = setInterval(myClock, 1000);
     }
 
+    function washFinished() {
+        alert(program.program + " bilvask færdig.");
+    }
+
     return (
         <>
             <Navbar />
@@ -111,7 +115,11 @@ function App() {
                 </div>
                 {startWash && (
                     <>
-                        <WashClock countDown={time} />)
+                        <WashClock
+                            countDown={time}
+                            washFinished={washFinished}
+                        />
+                        )
                     </>
                 )}
             </main>

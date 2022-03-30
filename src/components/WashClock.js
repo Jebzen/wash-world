@@ -1,5 +1,5 @@
 import "./WashClock.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 export default function WashClock(props) {
     // Credit: Mateusz Rybczonec
@@ -22,19 +22,19 @@ export default function WashClock(props) {
         },
     };
 
-    let TIME_LIMIT = 0;
+    let TIME_LIMIT = props.countDown;
     let timePassed = 0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
     let remainingPathColor = COLOR_CODES.info.color;
 
     useEffect(() => {
-        TIME_LIMIT = props.countDown;
         startTimer();
     }, [props.countDown]);
 
     function onTimesUp() {
         clearInterval(timerInterval);
+        props.washFinished();
     }
 
     function startTimer() {
@@ -70,7 +70,7 @@ export default function WashClock(props) {
             }
 
             return `${minutes}:${seconds}`;
-        } else if (time == 0) {
+        } else if (time === 0) {
             return "<small>Bilvask afsluttet</small>";
         } else {
             return false;

@@ -27,7 +27,7 @@ export default function WashStart(props) {
                     setStart(false);
                 });
         }
-    }, [start]);
+    }, [start, props]);
 
     return (
         <>
