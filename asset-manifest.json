@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wash-world/static/css/main.948f1693.css",
+    "main.js": "/wash-world/static/js/main.1e3e4a71.js",
+    "static/media/bootstrap-icons.woff?": "/wash-world/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
+    "static/media/bootstrap-icons.woff2?": "/wash-world/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
+    "index.html": "/wash-world/index.html",
+    "main.948f1693.css.map": "/wash-world/static/css/main.948f1693.css.map",
+    "main.1e3e4a71.js.map": "/wash-world/static/js/main.1e3e4a71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.948f1693.css",
+    "static/js/main.1e3e4a71.js"
+  ]
+}
