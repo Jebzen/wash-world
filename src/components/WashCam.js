@@ -22,10 +22,10 @@ export default function WashCam(data) {
     }
 
     let lpnText;
-    if (data.cam.lpn == "BV99122") {
-        lpnText = "Nummerplade: " + data.cam.lpn;
-    } else {
+    if (data.cam.lpn === "BV99123") {
         lpnText = "Nummerplade: " + data.cam.lpn + " PREMIUM";
+    } else {
+        lpnText = "Nummerplade: " + data.cam.lpn;
     }
 
     return (
