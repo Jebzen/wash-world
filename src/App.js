@@ -12,7 +12,7 @@ import WashClock from "./components/WashClock";
 function App() {
     //Locations
     const [locations, setLocations] = useState([]);
-    const [location, setLocation] = useState(0);
+    const [location, setLocation] = useState({});
 
     useEffect(() => {
         axios.get(info.backendUrl + "/locations").then((result) => {
@@ -24,6 +24,7 @@ function App() {
     function onChoice(event) {
         setLocation(locations[event.target.value - 1]);
         setCamLoad(true);
+        setProduct({});
     }
 
     //Cam
@@ -92,7 +93,7 @@ function App() {
                         camLoad={camLoad}
                     />
                 )}
-                {location.id && cam.lpn && (
+                {location.id && cam.lpn && camLoad == false && (
                     <WashProducts
                         lpn={cam.lpn}
                         locationID={location.id}
@@ -102,7 +103,7 @@ function App() {
                     />
                 )}
                 <div id="Wash-start" className="mb-5">
-                    {product.program && (
+                    {product.program && location && (
                         <WashStart
                             product={product}
                             location={location}
