@@ -15,7 +15,7 @@ export default function WashLocation(data) {
         <div>
             <h2 className="mt-5">Vælg bilvask</h2>
             <div className="d-grid wash-location-list">
-                {data.locations.sort(sortArray).map((location) => {
+                {data.locations.map((location) => {
                     return (
                         <div key={location.id}>
                             <input
